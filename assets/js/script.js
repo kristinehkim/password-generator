@@ -1,6 +1,6 @@
 // Define generatePassword and that is what is going to return the random password
 //Do your logic below 
-var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "+", ",", "-", ".", "/", ":", ";", "<", ">", "[", "]", "_", "`", "{", "}", "|", "~",'"'];
+var specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "+", ",", "-", ".", "/", ":", ";", "<", ">", "[", "]", "_", "`", "{", "}", "|", "~", '"'];
 var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var lowerCaseLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var upperCaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -45,29 +45,39 @@ function generatePassword() {
     //add uppercase characters to the pot
     pot = pot.concat(upperCaseLetters);
   }
-  console.log(pot);
+
+  for (var i = 0; i < charactersLength; i++) {
+    var index = Math.floor(Math.random() * pot.length);
+    var userChoice = pot[index];
+    console.log(userChoice)
+  }
+  var finalPass = " ";
+  finalPass.concat(userChoice);
+  return finalPass;
+
+
 }
 // Choose randomly from the pot how many times the length of the password
 // Make sure at least one of each character is selected if statement // google check if the string has a certain character
 //  if it passes then it will return a password
 // if it doesn't pass reselect the characters from the pot again try a new password from scratch again google how to loop until a certain condition is met
 
+// var index = Math.floor(Math.random() * specialCharacters.length);
+// var userChoice = specialCharacters[index]; 
+// console.log(userChoice)
 
-var index = Math.floor(Math.random() * specialCharacters.length);
-var userChoice = specialCharacters[index]; 
-console.log(userChoice)
+// index = Math.floor(Math.random() * numbers.length);
+// userChoice = numbers[index]; 
+// console.log(userChoice)
 
-index = Math.floor(Math.random() * numbers.length);
-userChoice = numbers[index]; 
-console.log(userChoice)
+// index = Math.floor(Math.random() * lowerCaseLetters.length);
+// userChoice = lowerCaseLetters[index]; 
+// console.log(userChoice)
 
-index = Math.floor(Math.random() * lowerCaseLetters.length);
-userChoice = lowerCaseLetters[index]; 
-console.log(userChoice)
+// index = Math.floor(Math.random() * upperCaseLetters.length);
+// userChoice = upperCaseLetters[index]; 
+// console.log(userChoice)
 
-index = Math.floor(Math.random() * upperCaseLetters.length);
-userChoice = upperCaseLetters[index]; 
-console.log(userChoice)
 
 // Assignment Code - document.querySelector is just grabbing the button. document refers to the HTML document, query selector is how it's grabbing it, and it's grabbing the button with the id generate so this is saying our generateBtn is is the button we get from document.querySelector("#generate") - the query selector is just setting up the button to work when you click it and to assign the text that generate password gives it
 var generateBtn = document.querySelector("#generate"); // grabs the button
@@ -78,6 +88,8 @@ function writePassword() {
   var passwordText = document.querySelector("#password"); //inserts the password document.querySelector("#password") into the text box below passwordText.value = password
 
   passwordText.value = password;
+
+  return alert(password);
 
 }
 
