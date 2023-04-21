@@ -52,20 +52,9 @@ function generatePassword() {
     // console.log(userChoice)
     myArr.push(userChoice);
   }
-  // if (includesSpecialCharacters === true) {
-  //   myArr[0] = ""
-  //   specialCharacters[12];
-  // }
   
   return myArr.join("");
-
-
-  // var finalPass = " ";
-  // finalPass.concat(myArr.join);
-  // return finalPass;
 }
-
-
 
 // Assignment Code - document.querySelector is just grabbing the button. document refers to the HTML document, query selector is how it's grabbing it, and it's grabbing the button with the id generate so this is saying our generateBtn is is the button we get from document.querySelector("#generate") - the query selector is just setting up the button to work when you click it and to assign the text that generate password gives it
 var generateBtn = document.querySelector("#generate"); // grabs the button
