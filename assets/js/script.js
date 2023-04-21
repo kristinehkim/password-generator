@@ -6,7 +6,7 @@ var upperCaseLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "
 
 function generatePassword() {
   var pot = [];
-  //Used pareInt to change the string to a number and created an if statement/conditional gate to verify that the length is between 8 and 128 characters.  If the user chooses outside of the limits, an alert will show.
+  //Used parseInt to change the string to a number and created an if statement/conditional gate to verify that the length is between 8 and 128 characters.  If the user chooses outside of the limits, an alert will show.
   var charactersLength = parseInt(prompt("How many characters would you like your password to contain?  Please choose between 8 and 128."));
   // console.log(typeof(charactersLength)) I did this to make sure it would return a number.
   if (charactersLength < 8 || charactersLength > 128) {
@@ -44,25 +44,26 @@ function generatePassword() {
     //add uppercase characters to the pot
     pot = pot.concat(upperCaseLetters);
   }
-  // This will randomly choose from the pot and strings it together.
-  var finalPass = []
+  // This will randomly choose from the pot and string it together.
+  var myArr = []
   for (var i = 0; i < charactersLength; i++) {
     var index = Math.floor(Math.random() * pot.length);
     var userChoice = pot[index];
     // console.log(userChoice)
-    finalPass.push(userChoice);
+    myArr.push(userChoice);
   }
-
   // if (includesSpecialCharacters === true) {
   //   myArr[0] = ""
   //   specialCharacters[12];
   // }
   
-  return finalPass.join("");
+  return myArr.join("");
 
-// Make sure at least one of each character is selected if statement // google check if the string has a certain character
-//  if it passes then it will return a password
-// if it doesn't pass reselect the characters from the pot again try a new password from scratch again google how to loop until a certain condition is met
+
+  // var finalPass = " ";
+  // finalPass.concat(myArr.join);
+  // return finalPass;
+}
 
 
 
